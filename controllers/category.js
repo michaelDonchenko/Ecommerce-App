@@ -1,5 +1,5 @@
 
-const Category = require('../models/category')
+const Category = require('../models/Category')
 
 exports.categoryById = async (req, res, next, id) => {
   await Category.findById(id).exec((err, category) => {

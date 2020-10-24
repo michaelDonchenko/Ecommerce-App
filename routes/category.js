@@ -1,5 +1,5 @@
 const express = require('express')
-const {read, categoryById, list, create, update, remove} = require('../controllers/category')
+const {read, categoryById, list, create, remove} = require('../controllers/category')
 const { userById, isAdmin } = require('../controllers/user')
 const isAuth = require('../middleware/isAuth')
 const router = express.Router()
