@@ -1,0 +1,32 @@
+.myCard {
+  
+  max-width: 300px;
+  min-width: 300px; 
+}
+
+.card__name {
+  font-size: 20px;
+  font-weight: 800;
+  background-color: #065c6f !important;
+  color: white;
+}
+
+.card__p {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.product__card {
+  min-height: 500px !important;
+}
+
+.addToCart {
+  background-color: #0d47a1 !important;
+  color: white !important;
+  font-size: 14px !important;
+}
+
+.addToCart:hover {
+  color: #ffd54f !important;
+ 
+}

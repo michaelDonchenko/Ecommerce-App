@@ -1,0 +1,16 @@
+@media only screen and (max-width: 990px) {
+    .shopDiv {
+        flex-direction: column;
+        align-content: center;
+    }
+
+    .col-4 {
+        max-width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    .col-8 {
+        max-width: 100% !important;
+       
+    }
+}
