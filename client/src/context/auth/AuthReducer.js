@@ -7,6 +7,7 @@ import {
   LOGIN_FAIL,
   LOGOUT,
   CLEAR_ERRORS,
+  LIST_USERS,
   } from '../types'
 
   export default (state, action) => {
@@ -16,6 +17,11 @@ import {
           ...state,
           isAuth: true,
           user: action.payload
+        }
+        case LIST_USERS:
+        return {
+          ...state,
+          allUsers: action.payload
         }
         case REGISTER_SUCCESS:
         case LOGIN_SUCCESS:  

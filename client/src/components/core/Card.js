@@ -63,12 +63,6 @@ const Card = ({product, itemInCart=false}) => {
   </div>
   )
 
-
- const showStock = quantity => {
-    return quantity > 0 ? (<span className="badge badge-primary badge-pill">In Stock</span> ) :
-     ( <span className="badge badge-danger badge-pill">Out of stock</span>)
-  }
-
 const showAddToCartButton = () => {
   return (
     <Link>
@@ -111,9 +105,6 @@ const showAddToCartButton = () => {
                 <Link >
                     <button className="btn btn-info mt-2 mb-2 ml-2 mr-2" data-toggle="modal" data-target={`#${product._id}`}>View Description</button>
                 </Link>
-                {
-                  showStock(product.quantity)
-                }
                 <br />
                 {
                   itemInCart === false && product.quantity >= 1 && (

@@ -7,7 +7,6 @@ const AdminDashboard = () => {
   const authContex = useContext(AuthContext)
   const {loadUser, user} = authContex
   
-
   useEffect(() => {
     loadUser()  
   }, [])
@@ -42,6 +41,11 @@ const AdminDashboard = () => {
              <li className="list-group-item">
                <Link className="nav-link" to={`/manage/products`}>
                  Update and Delete products
+               </Link>
+             </li>
+             <li className="list-group-item">
+               <Link className="nav-link" to={`/manage/orders`}>
+                 Users and Orders
                </Link>
              </li>
           </div>

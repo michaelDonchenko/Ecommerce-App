@@ -3,6 +3,7 @@ import {
     ORDER_CREATE_ERR,
     GET_ORDERS_ERR,
     USER_ORDERS,
+    LIST_ORDERS,
   } from '../types'
 
 
@@ -23,7 +24,12 @@ import {
             return {
                 ...state,
                 userOrders: action.payload
-            }      
+            }
+            case LIST_ORDERS:
+                return {
+                    ...state,
+                    allOrders: action.payload
+                }             
         default:
             return state
         }

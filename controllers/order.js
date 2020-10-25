@@ -37,7 +37,7 @@ exports.listOrders = async (req,res) => {
   let sortBy = req.query.sortBy ? req.query.sortBy : 'createdAt'
 
   await Order.find()
-  .populate('user', '_id name email adress')
+  // .populate('user')
   .sort([[sortBy, order]])
   .exec((error, orders) => {
     if (error) {
@@ -47,20 +47,3 @@ exports.listOrders = async (req,res) => {
   })
 }
 
-exports.getStatusValues = (req,res) => {
-  res.json(Order.schema.path('status').enumValues)
-}
-
-
-exports.updateOrderStatus = (req,res) => {
-  Order.update(
-    {_id: req.body.orderId},
-    {$set: {status: req.body.status}},
-    (error, order) => {
-      if (error) {
-        return res.status(400).json({error: error})
-      }
-      res.json(order)
-    }
-  )
-}

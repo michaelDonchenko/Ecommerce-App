@@ -32,6 +32,7 @@ const productSchema =  new mongoose.Schema({
 
   quantity: {
     type: Number,
+    default: 9999,
   },
 
   sold: {
@@ -43,11 +44,6 @@ const productSchema =  new mongoose.Schema({
     data: Buffer,
     contentType: String,
   },
-
-  shipping: {
-    required: false,
-    type: Boolean,
-  }
 
 },
 {timestamps:true}

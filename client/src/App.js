@@ -21,6 +21,7 @@ import ManageProducts from './components/pages/adminPages/ManageProducts';
 import Cart from './components/pages/Cart';
 import CartState from './context/cart/CartState';
 import OrderState from './context/order/OrderState';
+import UsersOrders from './components/pages/adminPages/UsersOrders';
 
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
                   <AdminRoute exact path="/create/category" component={CreateCategory} />
                   <AdminRoute exact path="/create/product" component={CreateProduct} />
                   <AdminRoute exact path="/manage/products" component={ManageProducts} />
+                  <AdminRoute exact path="/manage/orders" component={UsersOrders} />
                   <Route exact path="/register" component={Register} />
                   <Route exact path="/login" component={Login} />
                   <Route exact path="/error-page" component={ErrorPage} />

@@ -13,6 +13,7 @@ LOGIN_SUCCESS,
 LOGIN_FAIL,
 LOGOUT,
 CLEAR_ERRORS,
+LIST_USERS,
 } from '../types'
 
 const AuthState = props => {
@@ -22,6 +23,7 @@ const AuthState = props => {
     loading: false,
     user: null,
     error: null,
+    allUsers:[],
   }
 
   const [state, dispatch] = useReducer(AuthReducer, initialState)
@@ -44,6 +46,24 @@ const AuthState = props => {
       dispatch({type: AUTH_ERROR})
     }
   }
+
+   //list users
+ const listUsers = async () => {
+  try {
+    const res = await axios.get('/users')
+    dispatch({
+      type: LIST_USERS,
+      payload: res.data
+    })  
+    return res.data
+  } catch (err) {
+    dispatch({
+      type: AUTH_ERROR,
+      payload: err.response.data.msg
+    })
+    
+  }
+}
 
   //Register user
  const register = async (formData) => {
@@ -113,11 +133,13 @@ const AuthState = props => {
       loading: state.loading,
       user: state.user,
       error: state.error,
+      allUsers: state.allUsers,
       register,
       clearErrors,
       loadUser,
       login,
       logout,
+      listUsers,
     }}
     >
       {props.children}

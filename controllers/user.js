@@ -62,28 +62,3 @@ exports.isAdmin = async (req, res, next) => {
     })
    }
  }
-
- exports.pushToUserHistory = (req,res,next) => {
-  let history = []
-
-  req.body.products.forEach((item) => {
-    history.push({
-      _id: item._id,
-      name: item.name,
-      description: item.description,
-      category: item.category,
-      quantity: item.count,
-      transaction_id: req.body.transaction_id,
-      amount: req.body.amount
-    })
-  })
-
-  User.findOneAndUpdate({_id: req.profile._id}, {$push: {history: history}}, {new: true}, (error, data) => {
-    if (error) {
-      res.status(400).json({
-        error: 'Could not update the user purchase history'
-      })
-    }
-    next()
-  })
-}

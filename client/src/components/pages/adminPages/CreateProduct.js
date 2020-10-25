@@ -19,8 +19,6 @@ const CreateProduct = () => {
     description: '',
     price: '',
     category: '',
-    shipping: '',
-    quantity: '',
     photo: '',
     formData: '',
   })
@@ -30,8 +28,6 @@ const CreateProduct = () => {
     description,
     price,
     category,
-    shipping,
-    quantity,
     formData,
   } = values
 
@@ -103,20 +99,6 @@ const CreateProduct = () => {
                 return <option value={category._id} >{category.name}</option>
               })
             }   
-          </select>
-        </div>
-
-        <div className="form-group">
-          <label className="text-muted formLable">Quantity</label>
-          <input onChange={handleChange('quantity')} type="number" className="form-control myInput" value={quantity} />
-        </div>
-
-        <div className="form-group">
-          <label className="text-muted formLable">Shipping</label>
-          <select onChange={handleChange('shipping')} className="form-control">
-              <option >Please select</option>
-              <option value="0">No</option>
-              <option value="1">Yes</option>
           </select>
         </div>
 

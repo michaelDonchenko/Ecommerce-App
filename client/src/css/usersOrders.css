@@ -1,0 +1,7 @@
+@media only screen and (max-width: 1000px) {
+  .infoDiv {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+}

@@ -8,6 +8,7 @@ export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAIL = 'LOGIN_FAIL'
 export const LOGOUT = 'LOGOUT'
 export const CLEAR_ERRORS = 'CLEAR_ERRORS'
+export const LIST_USERS = 'LIST_USERS'
 
 //category types
 export const CREATE_SUCCESS = 'CREATE_SUCCESS'
@@ -53,3 +54,4 @@ export const CREATE_ORDER = 'CREATE_ORDER'
 export const ORDER_CREATE_ERR = 'ORDER_CREATE_ERR'
 export const GET_ORDERS_ERR = 'GET_ORDERS_ERR'
 export const USER_ORDERS = 'USER_ORDERS'
+export const LIST_ORDERS = 'LIST_ORDERS'
